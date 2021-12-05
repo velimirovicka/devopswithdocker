@@ -1,0 +1,14 @@
+docker run -d devopsdockeruh/simple-web-service:ubuntu
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+4f4fb700ef54: Pull complete
+1BDigest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+f6e3fa83acbc35f2bcdcf4f118e7f29e2de11a45aa61927955c622baf6a8b788
+
+docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES
+f6e3fa83acbc   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   22 seconds ago   Up 21 seconds             ecstatic_jackson
+
+docker exec -it ecstatic_jackson bash
+root@f6e3fa83acbc: /usr/src/app#root@f6e3fa83acbc:/usr/src/app# tail -f ./text.log
