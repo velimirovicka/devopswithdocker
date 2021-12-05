@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+  reverse-proxy:
+    image: nginx:1.21.4-alpine
+    ports:
+      - "8099:80"
+    volumes:
+      - ./proxy.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - frontend
+      - backend
+  frontend:
+    image: example-frontend
+    build: ./example-frontend
+    networks:
+      - frontend
+  backend:
+    image: example-backend
+    build: ./example-backend
+    environment:
+      - POSTGRES_HOST=db
+      - REDIS_HOST=redis-cache
+      - REQUEST_ORIGIN=http://localhost:8099
+    networks:
+      - backend
+    depends_on:
+      - db
+  redis-cache:
+    image: redis:6.2.6
+    networks:
+      - backend
+  db:
+    image: postgres:13.2-alpine
+    restart: no
+    environment:
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - backend
+
+networks:
+  backend:
+    name: backend
+  frontend:
+    name: frontend

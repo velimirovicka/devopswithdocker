@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  frontend:
+    image: example-frontend
+    ports:
+      - "5000:5000"
+  backend:
+    image: example-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - POSTGRES_HOST=db
+      - REDIS_HOST=redis-cache
+      - REQUEST_ORIGIN=http://localhost:5000
+    depends_on:
+      - db
+  redis-cache:
+    image: redis:6.2.6-alpine
+    volumes:
+      - ./cache:/data
+    command: redis-server --appendonly yes
+  db:
+    image: postgres:13.4-alpine
+    restart: no
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./database:/var/lib/postgresql/data

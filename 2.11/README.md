@@ -1,0 +1,3 @@
+- docker-compose file which has service called punkapi-beer from turbopuz/punkapi-beer image on Docker hub.
+- docker-compose file also has entry for build attribute pointing to Dockerfile within the same directory. 
+- Service punkapi-beer exposes port 8080 which is bound to port 8080 from the container.
