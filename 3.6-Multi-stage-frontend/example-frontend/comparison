@@ -1,0 +1,9 @@
+#before - from node-alpine
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+example-frontend-alpine                                latest        c054f3283dbe   16 hours ago     342MB
+
+#after - from multistage nginx-alpine
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+example-frontend-multistage                            latest        c0e4cd1c634b   48 seconds ago   23.8MB

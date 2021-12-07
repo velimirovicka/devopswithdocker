@@ -1,0 +1,9 @@
+#before - from node
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+example-frontend                                       latest        feedb0f1d0a9   About a minute ago   1.17GB
+
+#after - from node-alpine
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+example-frontend-alpine                                latest        c054f3283dbe   About a minute ago   342MB

@@ -1,0 +1,9 @@
+#before
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED          SIZE
+example-frontend                                       latest        fc431242a466   42 seconds ago   501MB
+
+#after
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED          SIZE
+example-frontend                                       latest        da98804042bd   16 seconds ago   453MB

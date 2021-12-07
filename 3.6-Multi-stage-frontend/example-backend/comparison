@@ -1,0 +1,9 @@
+#before - from golang-alpine
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED          SIZE
+example-backend-alpine                                 latest        c8872228306f   55 seconds ago   447MB
+
+#after - from scratch
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED          SIZE
+example-backend-multistage                             latest        8fbd67b51d3e   9 minutes ago    18.2MB

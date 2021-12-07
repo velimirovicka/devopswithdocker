@@ -1,0 +1,9 @@
+#before - FROM openjdk:8u292-jdk
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+punkapi-beer-assignment                                latest        6a2e94ac1a33   3 days ago           669MB
+
+#after - multistage
+docker image ls
+REPOSITORY                                             TAG           IMAGE ID       CREATED              SIZE
+punkapi-beer-multistage                                latest        8fe42658651a   About a minute ago   134MB
